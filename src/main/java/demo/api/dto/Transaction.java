@@ -7,11 +7,11 @@ import static demo.api.constant.AppConstants.*;
 
 public class Transaction {
     @Pattern(regexp = "^[1-9]\\d{9}$", message = FROM_MOBILE_NUM_ERROR)
-    private String fromMobileNumber;
+    String fromMobileNumber;
     @Pattern(regexp = "^[1-9]\\d{9}$", message = TO_MOBILE_NUM_ERROR)
-    private String toMobileNumber;
+    String toMobileNumber;
     @Min(value = 1, message = MIN_AMT_TRANSFER_ERROR)
-    private long amount;
+    long amount;
 
     public String getFromMobileNumber() {
         return fromMobileNumber;

@@ -32,12 +32,9 @@ public class AccountDAO {
             LOGGER.info("Checking if account with mobile number {} exists", mobileNumber);
             preparedStatement.setLong(1, parseLong(mobileNumber));
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    int rowCount = resultSet.getInt(1);
-                    if (rowCount != 0)
-                        isAccountPresent = true;
+                if (resultSet.next() && resultSet.getInt(1) != 0)
+                    isAccountPresent = true;
 
-                }
             }
             return isAccountPresent;
         } catch (SQLException ex) {

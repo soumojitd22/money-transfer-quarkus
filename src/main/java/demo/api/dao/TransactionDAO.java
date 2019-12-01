@@ -23,7 +23,7 @@ public class TransactionDAO {
     @Inject
     AgroalDataSource dataSource;
 
-    public long fetchAccountBalance(String mobileNumber) {
+    public long getAccountBalance(String mobileNumber) {
         try (Connection conn = dataSource.getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement(FETCH_BALANCE_SQL)) {
 

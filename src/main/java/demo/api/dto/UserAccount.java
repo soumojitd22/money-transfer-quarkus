@@ -8,9 +8,9 @@ import static demo.api.constant.AppConstants.MOBILE_NUM_ERROR;
 
 public class UserAccount {
     @Pattern(regexp = "^[1-9]\\d{9}$", message = MOBILE_NUM_ERROR)
-    private String mobileNumber;
+    String mobileNumber;
     @Min(value = 100, message = INIT_MIN_AMT_ERROR)
-    private long accountBalance;
+    long accountBalance;
 
     public String getMobileNumber() {
         return mobileNumber;

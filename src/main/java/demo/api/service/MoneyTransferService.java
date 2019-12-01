@@ -22,12 +22,12 @@ public class MoneyTransferService {
     AccountDAO accountDAO;
 
     public long checkAccountBalance(String mobileNumber) {
-        return transactionDAO.fetchAccountBalance(mobileNumber);
+        return transactionDAO.getAccountBalance(mobileNumber);
     }
 
     @Transactional
     public void transferMoney(Transaction transaction) {
-        long fromAccountBalance = transactionDAO.fetchAccountBalance(transaction.getFromMobileNumber());
+        long fromAccountBalance = transactionDAO.getAccountBalance(transaction.getFromMobileNumber());
         if (transaction.getAmount() > fromAccountBalance) {
             LOGGER.error("Insufficient balance to transfer money from {} to {}", transaction.getFromMobileNumber(),
                     transaction.getToMobileNumber());
