@@ -1,4 +1,4 @@
-**Money-Transfer**
+**Money-Transfer using Quarkus**
 
 Provides 3 REST endpoints -
 <br>
@@ -12,4 +12,8 @@ Build command to build the project -
 
 To run the project -
 <br>
-`java -jar money-transfer-1.0.0-SNAPSHOT-runner.jar`
+`java -jar target/money-transfer-1.0.0-runner.jar`
+
+Access the swagger-ui endpoint -
+<br>
+`http://localhost:8080/swagger-ui`

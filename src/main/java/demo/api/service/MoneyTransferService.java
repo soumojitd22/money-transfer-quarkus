@@ -34,11 +34,11 @@ public class MoneyTransferService {
 
             throw new AppError("Insufficient balance to transfer money. Account balance : " + fromAccountBalance);
         }
-        transactionDAO.debitMoney(transaction);
         if (!accountDAO.doesAccountExist(transaction.getToMobileNumber())) {
             LOGGER.error("Account not registered for mobile number :: {}", transaction.getToMobileNumber());
             throw new AppError("Account not registered for mobile number - " + transaction.getToMobileNumber());
         }
+        transactionDAO.debitMoney(transaction);
         transactionDAO.creditMoney(transaction);
     }
 }
